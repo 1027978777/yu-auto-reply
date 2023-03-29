@@ -6,6 +6,7 @@ import com.yupi.autoreply.api.openai.model.CreateCompletionRequest;
 import com.yupi.autoreply.api.openai.model.CreateCompletionResponse;
 import com.yupi.autoreply.common.ErrorCode;
 import com.yupi.autoreply.exception.BusinessException;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
  * @from <a href="https://yupi.icu">编程导航知识星球</a>
  **/
 @Service
+@Slf4j
 public class OpenAiApi {
 
     /**
@@ -37,6 +39,7 @@ public class OpenAiApi {
                 .body(json)
                 .execute()
                 .body();
+        log.info("result 返回字符串:", result);
         return JSONUtil.toBean(result, CreateCompletionResponse.class);
     }
 }

@@ -4,11 +4,9 @@ import com.yupi.autoreply.api.openai.OpenAiApi;
 import com.yupi.autoreply.api.openai.model.CreateCompletionRequest;
 import com.yupi.autoreply.api.openai.model.CreateCompletionResponse;
 import com.yupi.autoreply.config.OpenAiConfig;
-import com.yupi.autoreply.config.ZsxqConfig;
 import com.yupi.autoreply.utils.SpringContextUtils;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.annotation.Resource;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,6 +31,7 @@ public class OpenAiAnswerer implements Answerer {
         request.setTemperature(0);
         request.setMax_tokens(1024);
         CreateCompletionResponse response = openAiApi.createCompletion(request, openAiConfig.getApiKey());
+        log.info("OpenAi 响应：{}", response);
         List<CreateCompletionResponse.ChoicesItem> choicesItemList = response.getChoices();
         String answer = choicesItemList.stream()
                 .map(CreateCompletionResponse.ChoicesItem::getText)
