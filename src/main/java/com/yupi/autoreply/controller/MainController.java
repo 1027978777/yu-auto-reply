@@ -1,7 +1,11 @@
 package com.yupi.autoreply.controller;
 
+import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -14,5 +18,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/")
 @Slf4j
 public class MainController {
-
+    @RequestMapping("/xx")
+    public Map checkedProgress() {
+        HashMap<Object, Object> objectObjectHashMap = Maps.newHashMap();
+        objectObjectHashMap.put("xx", "aaaa");
+        return objectObjectHashMap;
+    }
 }
