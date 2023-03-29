@@ -40,3 +40,5 @@ task:
 #      monitor: default
 #      answerer: default
 #      cron: '0/10 * * * * ?'
+logging:
+  level: info
