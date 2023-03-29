@@ -46,6 +46,7 @@ public class ZsxqMonitor extends Monitor {
         // 2. 获取回答
         String answer = answerer.doAnswer("成都今天天气？");
         log.info("成都今天天气:{}", answer);
+        //System.out.println("成都今天天气:" + answer);
         // 3. 回复
         //AnswerRequest answerRequest = new AnswerRequest();
         //answerRequest.setTopicId(topic.getTopicId());
