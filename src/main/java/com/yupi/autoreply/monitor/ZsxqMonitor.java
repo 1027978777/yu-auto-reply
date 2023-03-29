@@ -44,8 +44,8 @@ public class ZsxqMonitor extends Monitor {
         //    String question = topic.getQuestion().getText().trim();
         //    log.info("{} 收到新提问 \n 问题：{}", taskName, question);
         // 2. 获取回答
-        String answer = answerer.doAnswer("成都今天天气？");
-        log.info("成都今天天气:{}", answer);
+        String answer = answerer.doAnswer("1+1=?");
+        log.info("1+1=?:{}", answer);
         //System.out.println("成都今天天气:" + answer);
         // 3. 回复
         //AnswerRequest answerRequest = new AnswerRequest();

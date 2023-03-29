@@ -42,4 +42,4 @@ task:
 #      cron: '0/10 * * * * ?'
 logging:
   level:
-    com.yupi.autoreply: debug
+    com.yupi.autoreply: INFO
