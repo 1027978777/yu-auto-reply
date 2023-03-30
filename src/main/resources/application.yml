@@ -1,4 +1,6 @@
 spring:
+  resource:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
   application:
     name: yu-auto-reply
   # 支持 swagger3
@@ -43,3 +45,5 @@ task:
 logging:
   level:
     com.yupi.autoreply: INFO
+
+
