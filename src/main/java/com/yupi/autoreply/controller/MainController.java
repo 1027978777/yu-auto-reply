@@ -1,7 +1,6 @@
 package com.yupi.autoreply.controller;
 
 import com.google.common.collect.Maps;
-import com.yupi.autoreply.answerer.OpenAiAnswerer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +20,7 @@ import java.util.HashMap;
 @Controller
 @Slf4j
 public class MainController {
-    @RequestMapping("/from")
+    @RequestMapping("/")
     public String helloWorld(Model model) {
         //HashMap<String, Object> objectObjectHashMap = Maps.newHashMap();
         //objectObjectHashMap.put("username", "username");
@@ -32,7 +31,9 @@ public class MainController {
     @RequestMapping("/xx")
     public ModelAndView helloWorld(@RequestParam("username") String username, ModelAndView mod) {
         System.out.println(username);
-        String answer = new OpenAiAnswerer().doAnswer(username);
+        //String answer = new OpenAiAnswerer().doAnswer(username);
+        //HashMap<String, Object> objectObjectHashMap = Maps.newHashMap();
+        String answer = username;
         HashMap<String, Object> objectObjectHashMap = Maps.newHashMap();
         objectObjectHashMap.put("username", answer);
         mod.addObject("answer", objectObjectHashMap);
