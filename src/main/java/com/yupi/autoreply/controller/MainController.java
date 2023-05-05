@@ -29,7 +29,7 @@ public class MainController {
     }
 
     @RequestMapping("/xx")
-    public ModelAndView helloWorld(@RequestParam("username") String username, ModelAndView mod) {
+    public ModelAndView helloWorld2(@RequestParam("username") String username, ModelAndView mod) {
         System.out.println(username);
         //String answer = new OpenAiAnswerer().doAnswer(username);
         //HashMap<String, Object> objectObjectHashMap = Maps.newHashMap();
@@ -39,5 +39,13 @@ public class MainController {
         mod.addObject("answer", objectObjectHashMap);
         mod.setViewName("from");
         return mod;
+    }
+
+    @RequestMapping("/hello")
+    public String helloWorld1(Model model) {
+        //HashMap<String, Object> objectObjectHashMap = Maps.newHashMap();
+        //objectObjectHashMap.put("username", "username");
+        //model.addAttribute("answer", objectObjectHashMap);
+        return "hello";
     }
 }
