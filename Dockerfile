@@ -9,7 +9,7 @@ COPY src ./src
 
 # Build a release artifact.
 RUN mvn package -DskipTests
-
+EXPOSE 80
 # 声明环境变量，这样容器就可以在运行时访问它们
 ENV OPENAI_MODEL=text-davinci-003
 ENV OPENAI_API_KEY=你的API_KEY
