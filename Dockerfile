@@ -3,7 +3,7 @@ FROM maven:3.8.1-jdk-8-slim as builder
 # Copy local code to the container image.
 WORKDIR /app
 COPY pom.xml .
-RUN mvn dependency:go-offline
+RUN mvn package -Dmaven.resources.includes=templates/*
 COPY src/ /app/src/
 RUN mvn package -DskipTests
 
@@ -17,7 +17,6 @@ ENV ZSXQ_SILENCED=true
 
 FROM openjdk:8-jdk-alpine
 COPY --from=builder /app/target/yu-auto-reply-0.0.1-SNAPSHOT.jar /app.jar
-COPY src/main/resources/templates/  /app/templates/
 EXPOSE 80
 # Run the web service on container startup.
 ENTRYPOINT ["java","-jar","/app.jar"]
