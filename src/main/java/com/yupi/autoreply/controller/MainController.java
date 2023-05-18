@@ -20,12 +20,12 @@ import java.util.HashMap;
 @RestController
 @Slf4j
 public class MainController {
-    @RequestMapping("/x")
+    @RequestMapping("/from")
     public String helloWorld() {
         //HashMap<String, Object> objectObjectHashMap = Maps.newHashMap();
         //objectObjectHashMap.put("username", "username");
         //model.addAttribute("answer", objectObjectHashMap);
-        return "hello xx";
+        return "from";
     }
 
     @RequestMapping("/xx")
