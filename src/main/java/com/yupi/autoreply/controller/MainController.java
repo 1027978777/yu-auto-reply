@@ -2,10 +2,10 @@ package com.yupi.autoreply.controller;
 
 import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -17,7 +17,7 @@ import java.util.HashMap;
  * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
  * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
-@Controller
+@RestController
 @Slf4j
 public class MainController {
     @RequestMapping("/x")
