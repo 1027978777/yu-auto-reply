@@ -8,7 +8,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Build a release artifact.
-RUN mvn package -Dmaven.resources.includes=templates/*
+RUN mvn clean package -Dmaven.resources.includes=templates/*
 
 # 声明环境变量，这样容器就可以在运行时访问它们
 ENV OPENAI_MODEL=text-davinci-003
@@ -18,5 +18,6 @@ ENV ZSXQ_GROUP_ID=你的星球id
 # 是否只提醒提问者
 ENV ZSXQ_SILENCED=true
 
+EXPOSE 80
 # Run the web service on container startup.
 ENTRYPOINT ["java","-jar","/app/target/yu-auto-reply-0.0.1-SNAPSHOT.jar","--spring.profiles.active=prod"]
