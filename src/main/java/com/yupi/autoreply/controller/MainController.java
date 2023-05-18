@@ -21,11 +21,11 @@ import java.util.HashMap;
 @Slf4j
 public class MainController {
     @RequestMapping("/x")
-    public String helloWorld(Model model) {
+    public String helloWorld() {
         //HashMap<String, Object> objectObjectHashMap = Maps.newHashMap();
         //objectObjectHashMap.put("username", "username");
         //model.addAttribute("answer", objectObjectHashMap);
-        return "from";
+        return "hello xx";
     }
 
     @RequestMapping("/xx")
