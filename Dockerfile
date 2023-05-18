@@ -3,9 +3,8 @@ FROM maven:3.8.1-jdk-8-slim as builder
 # Copy local code to the container image.
 WORKDIR /app
 COPY pom.xml .
-RUN mvn package -Dmaven.resources.includes=templates/*
 COPY src/ /app/src/
-RUN mvn package -DskipTests
+RUN mvn package -Dmaven.resources.includes=templates/*
 
 # 声明环境变量，这样容器就可以在运行时访问它们
 ENV OPENAI_MODEL=text-davinci-003
