@@ -1,13 +1,11 @@
 spring:
   freemarker:
     template-loader-path: classpath:/templates/
+    suffix: .ftl
   application:
     name: yu-auto-reply
   # 支持 swagger3
   mvc:
-    view:
-      prefix: /templates/
-      suffix: .ftl
     pathmatch:
       matching-strategy: ant_path_matcher
 server:
