@@ -20,7 +20,7 @@ import java.util.HashMap;
 @Controller
 @Slf4j
 public class MainController {
-    @RequestMapping("/")
+    @RequestMapping("/x")
     public String helloWorld(Model model) {
         //HashMap<String, Object> objectObjectHashMap = Maps.newHashMap();
         //objectObjectHashMap.put("username", "username");
@@ -46,6 +46,6 @@ public class MainController {
         //HashMap<String, Object> objectObjectHashMap = Maps.newHashMap();
         //objectObjectHashMap.put("username", "username");
         //model.addAttribute("answer", objectObjectHashMap);
-        return "hello";
+        return "Hello";
     }
 }
