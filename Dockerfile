@@ -16,6 +16,8 @@ ENV ZSXQ_COOKIE=你的星球Cookie
 ENV ZSXQ_GROUP_ID=你的星球id
 # 是否只提醒提问者
 ENV ZSXQ_SILENCED=true
+FROM openjdk:8-jdk-alpine
+COPY --from=build /app/target/yu-auto-reply-0.0.1-SNAPSHOT.jar /yu-auto-reply-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
 # Run the web service on container startup.
-ENTRYPOINT ["java","-jar","/app/target/yu-auto-reply-0.0.1-SNAPSHOT.jar","--spring.profiles.active=prod"]
+ENTRYPOINT ["java","-jar","/yu-auto-reply-0.0.1-SNAPSHOT.jar","--spring.profiles.active=prod"]
